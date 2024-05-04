@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "7WycYw2kSIdA4LYTMeCydpg-conthtv79t8c73bi0bjg-a.oregon-postgres.render.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "render.com",
+            "database": "dbcse340_2ho5",
+            "username": "jcmnao",
+            "password": "7WycYw2kSIdA4LYTMeCyFLNqlbaJxzM0"
+        }
+    ]
+}
