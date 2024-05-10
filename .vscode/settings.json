@@ -7,13 +7,13 @@
                 }
             },
             "previewLimit": 50,
-            "server": "7WycYw2kSIdA4LYTMeCydpg-conthtv79t8c73bi0bjg-a.oregon-postgres.render.com",
+            "server": "dpg-coqtl5i0si5c7398h4mg-a.oregon-postgres.render.com",
             "port": 5432,
             "driver": "PostgreSQL",
             "name": "render.com",
-            "database": "dbcse340_2ho5",
+            "database": "dbcse340_3",
             "username": "jcmnao",
-            "password": "7WycYw2kSIdA4LYTMeCyFLNqlbaJxzM0"
+            "password": "eVsBPtnS5llUh8VMtZI713YsfMYUmJlG"
         }
     ]
 }
