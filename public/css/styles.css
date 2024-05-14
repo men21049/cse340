@@ -66,6 +66,16 @@ nav ul{
 nav ul li{
   display: inline;
   padding: 20px;
+  color: aliceblue;
+}
+
+nav ul li a{
+  color: aliceblue;
+}
+
+nav ul li a:hover{
+  background-color: aliceblue;
+  color: black;
 }
 
 .hero{
@@ -120,6 +130,31 @@ nav ul li{
   padding: 2px 16px;
   background-color: white;
 }
+
+#inv-display{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  list-style: none;
+}
+
+#inv-display li{
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  text-align: center;
+  padding: 3px;
+  margin:10px
+}
+
+.namePrice h2 a{
+  color: black;
+}
+
+#inv-display li:hover{
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
 
 @media screen and (min-width: 500px){
 
