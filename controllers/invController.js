@@ -34,4 +34,4 @@ invDetail.detailsByInvetoryId = async function(req, res, next){
     })
 }
 
-module.exports = {invCont, invDetail};
+module.exports = invCont;

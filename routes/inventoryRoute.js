@@ -3,7 +3,7 @@ const express = require("express")
 const router = new express.Router()
 const invController = require("../controllers/invController")
 
-router.get("/type/:classificationId",invController.buildByClassificationId)
-router.get("/detail/:inv_Id",invDetail.detailsByInvetoryId)
+router.use("/type/:classificationId", invController.buildByClassificationId)
+router.use("/detail/:inv_Id",invController.detailsByInvetoryId)
 
 module.exports = router;
