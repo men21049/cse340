@@ -27,11 +27,11 @@ app.use(static)
 app.use("/inv", inventoryRoute)
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
-// File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
-  next({status: 404, message: '<p>We currently do not have that model, so here is the latest 404 model.</p><img src="images/site/404Image.jpg" width="300" height="300" alt="Image of 404 image"/>'})
+  next({status: 500, message: 'Sorry, we appear to have lost that page.',
+    status: 404, message: 'Sorry, we appear to have lost that page.'}
+  )
 })
-
 /* ***********************
  * Express error Handler
  * Place after all other middleware
@@ -39,7 +39,14 @@ app.use(async (req, res, next) => {
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 404){ message = '<p>We currently do not have that model, so here is the latest 404 model.</p><img src="images/site/404Image.jpg" width="300" height="300" alt="Image of 404 image"/>'} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  console.error(err.status)
+  if(err.status == 404)
+    { message = '<p>We currently do not have that model, so here is the latest 404 model.</p><img src="/images/site/404Image.jpg" width="300" height="300" alt="Image of 404 image"/>'} 
+  else if(err.status == 500)
+  {message = '<p>Oops!, something went wrong</p><img src="/images/site/500_error.webp" width="300" height="400" alt="Oops!"/>'}
+  else{
+    message = '<p>Not sure what happened, but we will look into it.</p>'
+  }
   res.render("errors/error", {
     title: err.status || 'Server Error',
     message,

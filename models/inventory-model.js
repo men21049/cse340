@@ -34,11 +34,12 @@ async function getDetailsByInvID(inv_id){
              FROM public.inventory WHERE inv_id = $1`,
             [inv_id]
         )
+        return data.rows
     }catch(error){
         console.error("getDetailByInvID " + error)
     }
 
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId,getDetailsByInvID};
+module.exports = {getClassifications, getInventoryByClassificationId, getDetailsByInvID};
 
