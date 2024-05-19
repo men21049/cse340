@@ -174,6 +174,71 @@ nav ul li a:hover{
   color: grey;
 }
 
+  /*----------- Form Styling --------*/
+:root {
+    --legen-color: #256EFF;
+    --pane-padding: 1rem;
+    --px-size: 1px;
+  }
+
+  .wf1 fieldset{
+    margin: 2rem 0;
+    border: var(--px-size) solid #ddd;
+    border-radius: 6px;
+    padding: .5rem 2%;
+  }
+
+  .wf1 legend{
+    color:var(--legen-color);
+    padding: 0 .5rem;
+  }
+
+  .wf1 label{
+    display: block;
+    padding-top: var(--pane-padding);
+    color: #46237A;
+    font-size: .9rem;
+  }
+
+  .wf1 .wf1_div{
+    padding-top: var(--pane-padding);
+    color:var(--legen-color);
+    font-size: .9rem;
+  }
+
+  .wf1 input[type="text"],
+  .wf1 input[type="password"]
+  {
+    background-color: #eee;
+    display: block;
+    border: solid var(--px-size) #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .wf1 input[type="submit"]{
+    border: none;
+    background-color: #46237A;
+    /*background-image: linear-gradient(#46237A, #FF495C);*/
+    color: #fff;
+    border-radius: 6px;
+    padding: .8rem;
+    width: 96%;
+    max-width: 400px;
+    margin: -1rem 2% 2rem 2%;
+  }
+
+  .wf1 input:required{
+    border-right: solid 8px red;
+  }
+
+  .wf1 input:required:valid{
+    border-right: solid 8px green;
+  }
+
 @media screen and (min-width: 500px){
 
   .wrapper{

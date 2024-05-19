@@ -1,0 +1,14 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<form action="thankyou.html" class="wf1" method="get">
+    <fieldset>
+        <legend>User information</legend>
+        <label>First Name*: <input type="text" name="fname" id="fname" placeholder="First Name" required></label>
+        <label>Last Name*: <input type="text" name="lname" id="lname" placeholder="Last Name" required  ></label>
+    </fieldset>
+    <input type="submit" name="submit" value="Login">
+</form>
+<span>No account? <a href="http://">Sign-up</a></span>
