@@ -1,0 +1,12 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<form action="/inventory/add-classification" class="wf1" method="post">
+    <fieldset>
+        <legend>Add new Classification Name</legend>
+        <label>Classification Name: <input type="text" name="classification_name" id="classification_name" placeholder="Classification Name" required></label>
+    </fieldset>
+    <input type="submit" name="submit" value="Register New Classification">
+</form>

@@ -207,7 +207,8 @@ nav ul li a:hover{
   }
 
   .wf1 input[type="text"],
-  .wf1 input[type="password"]
+  .wf1 input[type="password"],
+  .wf1 input[type="email"]
   {
     background-color: #eee;
     display: block;
@@ -231,6 +232,11 @@ nav ul li a:hover{
     margin: -1rem 2% 2rem 2%;
   }
 
+  .wf1 input[type="submit"]:hover{
+    background-color: red;
+    color:white;
+  }
+
   .wf1 input:required{
     border-right: solid 8px red;
   }
@@ -238,6 +244,17 @@ nav ul li a:hover{
   .wf1 input:required:valid{
     border-right: solid 8px green;
   }
+
+  #pswBtn{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    text-align: center;
+    padding: 3px;
+  }
+
+  #pswBtn:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
 
 @media screen and (min-width: 500px){
 

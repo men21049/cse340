@@ -32,4 +32,20 @@ invCont.detailsByInvetoryId = async function(req, res, next){
     })
 }
 
+invCont.invManagement =  async function(req, res, next){
+    let nav = await utilities.getNav()
+    res.render("./inventory/management",{
+        title: "Vehicle Management",
+        nav, 
+    })
+}
+
+invCont.addClassification = async function(req, res, next){
+    let nav = await utilities.getNav()
+    res.render("./inventory/add-classification",{
+        title: "Add New Classification",
+        nav, 
+    })
+}
+
 module.exports = invCont;
