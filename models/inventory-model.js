@@ -73,8 +73,6 @@ async function registerNewInventory(inv_make,inv_model,inv_description,inv_image
                 VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,
             [inv_make,inv_model,inv_description,inv_image,inv_thumbnail,inv_price,inv_year,inv_miles,inv_color,classification_id]
         )
-        console.log("${inv_color}")
-        console.log("something" + "${data.rows}")
         return data.rows
     }catch(error){
         console.error("New Inventory " + error)

@@ -68,7 +68,6 @@ validate.inventoryRule = () => {
     const { inv_make,inv_model,inv_description,inv_image,inv_thumbnail,inv_price,inv_year,inv_miles,inv_color,classification_id } = req.body
     let errors = []
     errors = validationResult(req)
-    console.log(errors)
     if (!errors.isEmpty()) {
       let nav = await utilities.getNav()
       let dropdown = await utilities.buildClassificationList()
