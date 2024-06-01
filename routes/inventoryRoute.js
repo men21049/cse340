@@ -8,8 +8,8 @@ const newInvValidate = require('../utilities/inventory-validation')
 
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId))
 router.get("/detail/:inv_Id", utilities.handleErrors(invController.detailsByInvetoryId))
-router.get("./new-classification", utilities.handleErrors(invController.buildClassification))
-router.get("./new-inventory", utilities.handleErrors(invController.buildInventory))
+router.get("/new-classification", utilities.handleErrors(invController.buildClassification))
+router.get("/new-inventory", utilities.handleErrors(invController.buildInventory))
 router.get("/", utilities.handleErrors(invController.invManagement))
 
 router.post(

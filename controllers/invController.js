@@ -12,7 +12,7 @@ invCont.buildByClassificationId = async function(req, res, next){
     const grid = await utilities.buildClassificationGrid(data)
     let nav = await utilities.getNav()
     const className = data[0].classification_name
-    res.render("./inventory/classification",{
+    res.render("inventory/classification",{
         title: className + " vehicles",
         nav,
         grid,
@@ -25,7 +25,7 @@ invCont.detailsByInvetoryId = async function(req, res, next){
     const grid = await utilities.buildDetailByID(data)
     const vehicle = " " +data[0].inv_make + " " + data[0].inv_model
     let nav = await utilities.getNav()
-    res.render("./inventory/details",{
+    res.render("inventory/details",{
         title: vehicle,
         nav,
         grid,
@@ -34,7 +34,7 @@ invCont.detailsByInvetoryId = async function(req, res, next){
 
 invCont.invManagement =  async function(req, res, next){
     let nav = await utilities.getNav()
-    res.render("./inventory/management",{
+    res.render("inventory/management",{
         title: "Vehicle Management",
         nav, 
     })
@@ -42,7 +42,7 @@ invCont.invManagement =  async function(req, res, next){
 
 invCont.buildClassification = async function(req, res, next){
     let nav = await utilities.getNav()
-    res.render("./inventory/add-classification",{
+    res.render("inventory/add-classification",{
         title: "Add New Classification",
         nav, 
         errors: null,
@@ -86,7 +86,7 @@ invCont.addClassification = async function(req, res, next){
 invCont.buildInventory = async function(req,res,next){
     let nav = await utilities.getNav()
     let dropdown = await utilities.buildClassificationList()
-    res.render("./inventory/add-inventory",{
+    res.render("inventory/add-inventory",{
         title: "Add new Inventory",
         nav, 
         dropdown, 
