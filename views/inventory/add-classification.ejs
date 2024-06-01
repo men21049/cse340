@@ -3,10 +3,19 @@
 <% } else {
   res.redirect('/')
 } %>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+<%- messages() %>
 <form action="/inventory/add-classification" class="wf1" method="post">
     <fieldset>
         <legend>Add new Classification Name</legend>
-        <label>Classification Name: <input type="text" name="classification_name" id="classification_name" placeholder="Classification Name" required></label>
+        <span>New classification name cannot contain a space or special character of any kind.</span>
+        <label>Classification Name: <input type="text" name="classification_name" id="classification_name" pattern="" placeholder="Classification Name" required></label>
     </fieldset>
     <input type="submit" name="submit" value="Register New Classification">
 </form>

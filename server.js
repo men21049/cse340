@@ -54,7 +54,7 @@ app.set("layout","./layouts/layout")
  * Routes
  *************************/
 app.use(static)
-app.use("/inv", inventoryRoute)
+app.use("/inventory", inventoryRoute)
 app.use("/account",accountRoute)
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))

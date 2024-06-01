@@ -22,7 +22,7 @@ async function buildRegister(req, res, next){
     })
   }
 
-  /* ****************************************
+/* ****************************************
 *  Process Registration
 * *************************************** */
 async function registerAccount(req, res) {
@@ -35,7 +35,6 @@ async function registerAccount(req, res) {
     account_email,
     account_password
   )
-  console.log(regResult)
   if (regResult) {
     req.flash(
       "notice",

@@ -208,7 +208,9 @@ nav ul li a:hover{
 
   .wf1 input[type="text"],
   .wf1 input[type="password"],
-  .wf1 input[type="email"]
+  .wf1 input[type="email"],
+  .wf1 input[type="textarea"],
+  .wf1 select
   {
     background-color: #eee;
     display: block;
@@ -218,6 +220,10 @@ nav ul li a:hover{
     color: #555;
     width: 100%;
     max-width: 400px;
+  }
+
+  .wf1 input[type="textarea"]{
+    min-height: 300px;
   }
 
   .wf1 input[type="submit"]{
@@ -255,6 +261,15 @@ nav ul li a:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
+  .notice>ul{
+    text-decoration: none;
+    list-style-type: none;
+    padding:10px;
+  }
+
+  .notice li{
+    color:red;
+  }
 
 @media screen and (min-width: 500px){
 
