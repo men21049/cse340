@@ -17,6 +17,7 @@ const utilities = require("./utilities")
 const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 
 /* ***********************
@@ -32,6 +33,7 @@ app.use(session({
   saveUninitialized: true,
   name: 'sessionId',
 }))
+app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
@@ -54,7 +56,7 @@ app.set("layout","./layouts/layout")
  * Routes
  *************************/
 app.use(static)
-app.use("/inventory", inventoryRoute)
+app.use("/inv", inventoryRoute)
 app.use("/account",accountRoute)
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
