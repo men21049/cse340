@@ -64,6 +64,7 @@ async function accountLogin(req, res){
   let nav = await utilities.getNav()
   const {account_email, account_password} = req.body
   const accountData = await accountModel.getAccountByEmail(account_email)  
+
   if(!accountData){
     req.flash("notice","Please check your credentials and try again. ")
     res.status(400).render("account/login",{
@@ -76,11 +77,12 @@ async function accountLogin(req, res){
   }
 
   try{
-    console.log(account_password)
-    console.log(accountData.account_password)
-    if(await bcrypt.compare(account_password, accountData.account_password )){
+    /*const testD = await bcrypt.compare(account_password, accountData.account_password)*/
+    /*console.log(testD)*/
+    if(account_password === accountData.account_password){
       delete accountData.account_password
       const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET,{expiresIn:3600})
+
       if(process.env.NODE_ENV === 'development'){
         res.cookie("jwt",accessToken,{httpOnly:true, secure:true, maxAge: 3600 * 1000})
       }
@@ -93,14 +95,18 @@ async function accountLogin(req, res){
   catch(error){
     return new Error('Access Forbidden')
   }
+  console.log("una cosa rara paso")
 }
 
 async function buildAccountMngmt (req,res){
   let nav = await utilities.getNav()
   const { account_email, account_firstname} = req.body
-  const data = await accountModel.getAccountByEmail(account_email)
-  console.log("test bam " + data)
-  if(!data){
+
+  console.log(req.body)
+
+  const accountdata = await accountModel.getAccountByEmail(account_email)
+
+  if(!accountdata){
       res.render("account/account-management", {
         title: "Account Management",
         nav,
