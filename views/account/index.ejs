@@ -1,0 +1,28 @@
+<!-- Content Heading -->
+<% if (title) { %>
+    <h1 id="accountMgmt"><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<!-- Message -->
+<%- messages() %>
+
+<!-- Error Block for Server-Side Validation -->
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <% }) %>
+    </ul>
+<% } %>
+
+<!-- Main Content -->
+    <% if (userAccount.account_type === "Client") { %>
+    <h2>Welcome <%= userAccount %> </h2>
+    <a href="/account/update-info">Update Account Information</a>
+    
+    <% } else { %>
+    <h2>Welcome <%= userAccount %> </h2>
+    <a href="/inventory/">Inventory Management</a>
+   <% } %>

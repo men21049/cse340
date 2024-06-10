@@ -86,6 +86,8 @@ app.use(async (err, req, res, next) => {
     nav
   })
 })
+
+app.use(utilities.checkJWTToken)
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file

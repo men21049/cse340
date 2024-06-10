@@ -1,5 +1,6 @@
 const utilities = require("../utilities/")
 const accountModel = require("../models/account-model")
+const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
 
@@ -77,12 +78,10 @@ async function accountLogin(req, res){
   }
 
   try{
-    /*const testD = await bcrypt.compare(account_password, accountData.account_password)*/
-    /*console.log(testD)*/
-    if(account_password === accountData.account_password){
+
+    if(await bcrypt.compare(account_password, accountData.account_password)){
       delete accountData.account_password
       const accessToken = jwt.sign(accountData, process.env.ACCESS_TOKEN_SECRET,{expiresIn:3600})
-
       if(process.env.NODE_ENV === 'development'){
         res.cookie("jwt",accessToken,{httpOnly:true, secure:true, maxAge: 3600 * 1000})
       }
@@ -95,7 +94,6 @@ async function accountLogin(req, res){
   catch(error){
     return new Error('Access Forbidden')
   }
-  console.log("una cosa rara paso")
 }
 
 async function buildAccountMngmt (req,res){
